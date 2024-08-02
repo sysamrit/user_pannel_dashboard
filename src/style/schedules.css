@@ -1,0 +1,25 @@
+.schedule_create{
+    display: flex;
+     align-items: center;
+     margin-top: 25px;
+}
+.schedule_create button{
+    width: 200px;
+    background-color: red;
+    color: white;
+    margin-left: 20px;
+  }
+.completeSchedule {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-right: 20px;
+  }
+  .completeSchedule button{
+    background-color: red;
+    width: 220px;
+    height: 40px;
+    color: white;
+    text-align: center;
+  
+  }

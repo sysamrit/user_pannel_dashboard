@@ -1,0 +1,84 @@
+.inspection-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-header{
+    margin-top: 20px;
+}
+
+.form-header>h5 {
+    text-transform:uppercase;
+}
+.form-group{
+    width: 80%;
+}
+
+input[type="text"]{
+    width: 98%;
+    padding: 6px; /* Reduced padding */
+    margin-bottom: 8px; /* Reduced margin */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.forn-select{
+    width: 80%;
+}
+.loading-indicator-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+    position: fixed;    
+    top: 50%;              
+    left: 50%;             
+    transform: translate(-50%, -50%); 
+    z-index: 100;          
+  }
+  
+  .form-content.hidden {
+    display: none; 
+  }
+  
+  .inspection-form-container {
+    position: relative; 
+  }
+  .submit_button{
+    background-color: red;
+  }
+  .text_area_btn {
+   width: 100%;
+   display: flex;
+   justify-content: end;
+  }
+  .text_area_btn button{
+    width: 40%;
+    margin-right: 18px;
+    background-color: red;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  } 
+  .assign_Dept_section{
+    width: 80%;
+    background-color: #e8e5e5;
+    /* display: none; */
+  }
+  .form-group2{
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.form-select{
+  width: 98%;
+}
+.faulty_label{
+  padding-left: 10px;
+}
+.faulty_area{
+  padding-left: 10px;
+}
+/* .datalist-fields{
+padding-left: 10px;
+} */

@@ -1,0 +1,8 @@
+.member-tooltip{
+    display: flex;
+    width: 100%;
+}
+.member-tooltip button{
+    width: 20px;
+    font-size: 10px;
+}

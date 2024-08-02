@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.chekpoint-lbl{
+  width: 100%;
+}
+
+
+
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(233, 241, 248);
+  height: 40px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+/* .title h2 {
+  color: rgba(19, 17, 17, 0.637);
+} */
+
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.692);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+select,button {
+  width: 98%;
+  padding: 6px; /* Reduced padding */
+  margin-bottom: 8px; /* Reduced margin */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+textarea{
+  width: 98%;
+  padding: 6px; 
+  margin-bottom: 8px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="text"]{
+  width: 96%;
+  padding: 6px; /* Reduced padding */
+  margin-bottom: 8px; /* Reduced margin */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* .search-fields {
+  display: flex;
+  gap: 8px; 
+} */
+
+/* .search-fields input {
+  flex: 1; 
+} */
+
+.asset-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.asset-table th, .asset-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.department-form ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.department-form li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+.form-buttons button {
+  margin-left: 10px;
+}
+
+/* .asset-status-buttons, .asset-safe-buttons {
+  display: flex;
+  justify-content: space-between;
+} */
+
+/* .asset-status-buttons button, .asset-safe-buttons button, .asset-deployed-buttons button {
+  width: 20%;
+} */
+
+/* .asset-deployed-buttons {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.signature-canvas {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.checkPoint-container {
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Increased border radius for rounded corners */
+  /* padding: 20px;  */
+  /* Increased padding for more space inside the container */
+  margin-bottom: 20px;
+  background-color: #fff;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+   /* Added subtle shadow for depth */
+}
+
+.checkPoint-container label {
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 8px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 18px; /* Increased font size */
+}
+
+.checkPoint-container .asset-status-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.checkPoint-container .asset-status-buttons button {
+  padding: 8px 16px;
+  font-size: 12px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.btn-con {
+  display: flex;
+  align-items: center;
+  margin: 10px; /* Adjusted margin for spacing */
+}
+
+.btn-con input[type="radio"] {
+  display: none; /* Hide default radio button */
+}
+
+.btn-con .custom-radio {
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 7px 14px;
+  border: 2px solid rgb(83, 210, 241); /* Blue border */
+  border-radius: 10px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
+}
+
+
+
+
+.btn-con input[type="radio"]:checked + .custom-radio {
+  background-color: #5DADE2; /* Blue background when checked */
+  color: white; /* White text when checked */
+  border-color: #5DADE2; /* Blue border when checked */
+}
+
+.btn-con .custom-radio:hover {
+  background-color: #e9e3e3; /* Light grey background on hover */
+}
+
+
+.floating-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5DADE2;
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 2px;
+  right: 42px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;}
+
+.floating-button:hover {
+  background-color: #5897f7;
+  /* transform: scale(1.1);
+  cursor: pointer; */
+}
+.submit-btn {
+  width: 150px;
+  height: 50px;
+  background-color: #5DADE2;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  border: none; 
+  color: white; 
+  font-size: 16px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+}
+
+.insp-btn-div{
+  align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust the gap between label and dropdown */
+}

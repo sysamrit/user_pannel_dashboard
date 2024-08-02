@@ -1,0 +1,120 @@
+.base-div {
+    position: relative;
+    z-index: 1; /* Ensure the base div has a lower z-index */
+  }
+  .title h3 {
+    color: rgba(19, 17, 17, 0.637);
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+  }
+  
+.action-container {
+    position: relative;
+  }
+  /* .action-btn {
+    background-color: rgba(44, 187, 223, 0.934);
+    width: 65px;
+    height: 30px;
+    border: none;
+    position: relative;
+    color: white;
+  } */
+
+  .action-btn {
+    /* background-color: rgba(44, 187, 223, 0.934); */
+    background-color: red;
+    width: 80px; /* Adjusted width to accommodate icon */
+    height: 30px;
+    border: none;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon {
+    margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .icon_download{
+    margin-right: 12px;
+    font-size: 20px;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(249, 249, 249);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    min-width: 160px;
+    border: 1px solid #ddd;
+  }
+  
+  .action-container:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+ 
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+    
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  nav {
+    position: relative;
+    z-index: 2; /* Ensure the nav has a lower z-index than the dropdown */
+  }
+
+  .KJETY,.cqOzcc,.hRjtIH,.eOvIkq,.lgzmjR{
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+  }
+  .export-btn button{
+    /* background-color:rgba(44, 113, 223, 0.934);  */
+    background-color: red;
+    width: 150px;
+    height: 40px;
+    color: white;
+    text-align: center;
+
+  }
+  .export-btn {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+.create_RCA {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.create_RCA button{
+  /* background-color:rgba(44, 113, 223, 0.934);  */
+  background-color: red;
+  width: 150px;
+  height: 40px;
+  color: white;
+  text-align: center;
+
+}
+.isPiMa{
+  justify-content: center !important;
+
+}
+.gdBOih{
+  justify-content: center !important;
+
+}
+
+
