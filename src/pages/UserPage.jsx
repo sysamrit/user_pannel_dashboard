@@ -7,10 +7,13 @@ import LOGO from '../images/LOGO.png';
 function UserPage() {
     const [insTableVisible, setInsTableVisible] = useState(false);
     const [isSeondaryTableVisible, setIsSeondaryTableVisible] = useState(false);
+    const [isAutomobileVisible, setIsAutomobileVisible] = useState(false);
     const [scheduleTableVisible, setScheduleTableVisible] = useState(false);
     const [inputValue, setInputValue] = useState("");
     const [primaryInsTableData, setPrimaryInsTableData] = useState([]);
     const [secondaryInsTableData, setSecondaryInsTableData] = useState([]);
+    const [automobileTableData, setAutomobileTableData] = useState([]);
+    const [autoMobileEmpData, setAutoMobileEmpData] = useState([]);
     const [scheduleTableData, setScheduleTableData] = useState([]); // Assuming this for the example
     const [toggleAPICall, setToggleAPICall] = useState(false);
     const navigate = useNavigate();
@@ -32,6 +35,7 @@ function UserPage() {
         setInsTableVisible(!insTableVisible);
         setScheduleTableVisible(!scheduleTableVisible);
         setIsSeondaryTableVisible(!isSeondaryTableVisible);
+        setIsAutomobileVisible(!isAutomobileVisible);
         setToggleAPICall(!toggleAPICall);
     };
 
@@ -41,9 +45,20 @@ function UserPage() {
             .then((res) => {
                 setPrimaryInsTableData(res.data.primary_inspection);
                 setSecondaryInsTableData(res.data.secondry_inspection);
+                if(res.data.autmobile){
+                    setAutomobileTableData(res.data.autmobile);
+                    setAutoMobileEmpData(res.data.emp_data);
+                    console.log(res.data.emp_data);
+                }
                 // setScheduleTableData(res.data.schedule_inspection); // Assuming this for the example
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                if (err.code === 'ERR_NETWORK') {
+                    alert('Please Connect with Network ..');
+                } else {
+                    console.log(err);
+                }
+            });
     };
 
     const goToInspectionForm = (id, asset_id, asset_name, emp_id, emp_name, dept) => {
@@ -71,7 +86,7 @@ function UserPage() {
                                     <th>Asset Code</th>
                                     <th>Asset Name</th>
                                     <th>Section</th>
-                                    <th>Button</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -108,7 +123,7 @@ function UserPage() {
                                     <th>Asset Code</th>
                                     <th>Asset Name</th>
                                     <th>Section</th>
-                                    <th>Button</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -136,6 +151,50 @@ function UserPage() {
                         </table>
                     </div>
                 )}
+
+          {isAutomobileVisible && (
+                    <div className="scondary_table">
+                        <div className="title_table"><p>Daily Automobile Inspection :</p></div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Inspection No.</th>
+                                    <th>Asset Id</th>
+                                    <th>Asset Name</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        {automobileTableData.length > 0 ? (
+                         automobileTableData.map((ele, index) => {
+
+                        const empName = autoMobileEmpData.length > 0 ? autoMobileEmpData[0].emp_name : '';
+                        const deptName = autoMobileEmpData.length > 0 ? autoMobileEmpData[0].dept_name : '';
+
+                        return (
+                            <tr key={index}>
+                                <td style={{ border: "1px solid #ccc", padding: "8px" }}>{ele.inspection_no}</td>
+                                <td style={{ border: "1px solid #ccc", padding: "8px" }}>{ele.asset_id}</td>
+                                <td style={{ border: "1px solid #ccc", padding: "8px" }}>{ele.asset_name}</td>
+                                <td style={{ border: "1px solid #ccc", padding: "8px" }}>
+                                    {ele.inspection_status === "Ongoing" ? (
+                                        <button onClick={() => goToInspectionForm(ele.inspection_no, ele.asset_id, ele.asset_name, inputValue, empName, deptName)}>Start</button>
+                                    ) : (
+                                        <label style={{ color: 'green' }}>Done</label>
+                                    )}
+                                </td>
+                            </tr>
+                        );
+                    })
+                ) : (
+                    <tr>
+                        <td colSpan="4" className="no-data">Haven't any Inspection Today</td>
+                    </tr>
+                )}
+            </tbody>
+                        </table>
+                    </div>
+                )}
                 {scheduleTableVisible && (
                     <div className="schedule_table">
                         <div className="title_table"><p>Schedule Maintenance :</p></div>
@@ -146,7 +205,7 @@ function UserPage() {
                                     <th>Asset Id</th>
                                     <th>Last Service Date</th>
                                     <th>Next Service Date</th>
-                                    <th>Button</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>

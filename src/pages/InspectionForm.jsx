@@ -61,7 +61,13 @@ function InspectionForm() {
           console.log("Data :",res.data);
           setInspectors(res.data);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          if (err.code === 'ERR_NETWORK') {
+              alert('Please Connect with Network ..');
+          } else {
+              console.log(err);
+          }
+      });
     };
 
     fetchData();
@@ -73,7 +79,13 @@ function InspectionForm() {
       .then((res)=>{
         setDeptList(res.data);
       })
-      .catch((err)=>console.log(err));
+      .catch((err) => {
+        if (err.code === 'ERR_NETWORK') {
+            alert('Please Connect with Network ..');
+        } else {
+            console.log(err);
+        }
+    });
     }
     fetchDept();
   },[]);
@@ -86,7 +98,13 @@ function InspectionForm() {
         .then((res) => {
           setAsset(res.data);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          if (err.code === 'ERR_NETWORK') {
+              alert('Please Connect with Network ..');
+          } else {
+              console.log(err);
+          }
+      });
     };
     fetchAsset();
   }, []);
@@ -103,7 +121,13 @@ function InspectionForm() {
             console.log("formdata ",res.data);
             setDeptForm(res.data);
           })
-          .catch((err) => console.log(err));
+          .catch((err) => {
+            if (err.code === 'ERR_NETWORK') {
+                alert('Please Connect with Network ..');
+            } else {
+                console.log(err);
+            }
+        });
       }
     };
     fetchDept();
@@ -116,7 +140,13 @@ function InspectionForm() {
         .then((res) => {
           setFormFields(res.data[0].fields);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          if (err.code === 'ERR_NETWORK') {
+              alert('Please Connect with Network ..');
+          } else {
+              console.log(err);
+          }
+      });
     };
     fetchFormField();
   }, [formName]);
@@ -167,9 +197,16 @@ function InspectionForm() {
                 navigate("/user");
               }
             })
-            .catch((error) => {
-              console.error("Error submitting form:", error);
-            })
+            // .catch((error) => {
+            //   console.error("Error submitting form:", error);
+            // })
+            .catch((err) => {
+              if (err.code === 'ERR_NETWORK') {
+                  alert('Please Connect with Network ..');
+              } else {
+                  console.log("Error submitting form:", err);
+              }
+          })
             .finally(() => {
               setLoading(false); // Stop loading
             });
@@ -206,9 +243,16 @@ function InspectionForm() {
                 window.top.close();
               }
             })
-            .catch((error) => {
-              console.error("Error submitting form:", error);
-            })
+            // .catch((error) => {
+            //   console.error("Error submitting form:", error);
+            // })
+            .catch((err) => {
+              if (err.code === 'ERR_NETWORK') {
+                  alert('Please Connect with Network ..');
+              } else {
+                  console.log("Error submitting form:", err);
+              }
+          })
             .finally(() => {
               setLoading(false); // Stop loading
             });
@@ -304,18 +348,6 @@ function InspectionForm() {
           <div className="search-fields">
             <input type="text" className="form-control" name="department" value={splitDepartment} readOnly />
 
-
-            {/* <datalist id="dept_list">
-              {deptList &&
-                deptList.map((item, index) => (
-                  <option
-                    key={index}
-                    value={`${item}`}
-                  >
-                    {`${item}`}
-                  </option>
-                ))}
-            </datalist> */}
           </div>
       </div>
         <div className="form-group">

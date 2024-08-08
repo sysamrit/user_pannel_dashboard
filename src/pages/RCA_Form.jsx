@@ -126,7 +126,6 @@ function RCA_Form({ data, toggleContainer,inspectionNo }) {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const formData = new FormData(e.target);
     formData.append("created_by", createdBy);
     formData.append("inspection_id", inspection_id);
@@ -271,7 +270,7 @@ function RCA_Form({ data, toggleContainer,inspectionNo }) {
             </div>
             <div className="form_item1">
               <label htmlFor="problem_statement">Problem Statement</label>
-              <input type="text" id="problem_statement" onChange={(e)=>setProblem_statement(e.target.value)} value={problem_statement} />
+              <input type="text" id="problem_statement" onChange={(e)=>setProblem_statement(e.target.value)} value={problem_statement} autoComplete="off" />
               
             </div>
             {/* Calender Section */}

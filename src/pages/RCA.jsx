@@ -197,14 +197,14 @@ const handleDepartmentChange = (event) => {
   }
 };
 
-const showRCAForm=()=>{
-  setIsRCAContainerVisible(true);
-}
+// const showRCAForm=()=>{
+//   setIsRCAContainerVisible(true);
+// }
 
-const hideRCAForm=()=>{
-  setIsRCAContainerVisible(false);
+// const hideRCAForm=()=>{
+//   setIsRCAContainerVisible(false);
 
-}
+// }
 
   // Drop Down Api
 
@@ -229,13 +229,13 @@ const hideRCAForm=()=>{
        <div className='title'>
        <h3>Root Cause Analysis</h3>
     </div>
-    <div className='create_RCA'>
+    {/* <div className='create_RCA'>
         <button onClick={showRCAForm}>
         <FaRegClone className="icon" /> Create RCA
 
         </button>
-      </div>
-    <div style={{ backgroundColor: "rgb(245, 242, 242)", display: 'flex', alignItems: 'center', marginTop: "25px" }}>
+      </div> */}
+    <div style={{ backgroundColor: "rgb(245, 242, 242)", display: 'flex', alignItems: 'center', marginTop: "70px" }}>
         <div style={{ flex: 1 }}>
         <select style={{ padding: "6px 10px", width: "30%", marginLeft: "13px" }}  value={selectedDeptValue} onChange={handleDepartmentChange}>
             <option value="none">Select Department</option>
@@ -313,7 +313,7 @@ const hideRCAForm=()=>{
           <GoPlus />
           <span>Form</span>
         </div> */}
-              {isRCAContainerVisible && <CreateRCAForm  toggleContainer={hideRCAForm} />}
+              {/* {isRCAContainerVisible && <CreateRCAForm  toggleContainer={hideRCAForm} />} */}
               {updateRCAFormVisible && <RCA_UpdateModal data={rcaUpdateData} toggleContainer={hideRCA_UpdateContainer} />}
               {/* {approvalRCAFormVisible && <RCA_Approval_Form data={rcaUpdateData} toggleContainer={hideRCA_UpdateContainer} />} */}
               {viewRCAFormVisible && <RCAViewModal data={viewRCAForm} toggleContainer={hideFileContainer} />}

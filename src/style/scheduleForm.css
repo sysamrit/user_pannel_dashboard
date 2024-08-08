@@ -46,7 +46,7 @@ body {
   
   .form_item input,select,textarea {
     flex: 0 0 70%;
-    width: auto;
+    /* width: auto; */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;

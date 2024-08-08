@@ -13,6 +13,8 @@ import RequestPart from "./pages/RequestPart";
 import Reservation from "./pages/Reservation";
 import Schedules from "./pages/Schedules";
 import ScheduleFormUser from "./pages/ScheduleFormUser";
+import DailyInspectionReport from "./pages/DailyInspectionReport";
+import InspectionTransfer from "./pages/InspectionTransfer";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
             <SideNavbar>
               <Routes>
                 <Route path='inspection/inspection_report' element={<InspectionReport />} />
+                <Route path='inspection/daily_inspection_report' element={<DailyInspectionReport/>} />
+                <Route path='inspection/inspection_transfer' element={<InspectionTransfer/>} />
                 <Route path='inspection/rca' element={<RCA />} />
                 <Route path='assign/workdetails' element={<WorkDetails />} />
                 <Route path='/maintenance/request_maintenance' element={<RequestMaintenance />} />

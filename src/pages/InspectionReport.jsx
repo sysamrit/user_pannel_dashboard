@@ -383,13 +383,7 @@ export const InspectionReport = () => {
       </div>
        </div>
 
-      <div
-        style={{
-          backgroundColor: "rgb(245, 242, 242)",
-          marginTop: "10px",
-          height: "80vh",
-          position: "relative",
-        }}>
+      <div style={{ backgroundColor: "rgb(245, 242, 242)", marginTop: "10px", height: "80vh", position: "relative",}}>
         <DataTable
           key={key}
           columns={columns}
@@ -559,28 +553,7 @@ export const InspectionReport = () => {
                       />
                     ))}
                 </div>
-                {/*<div
-                  className="image-row"
-                  style={{
-                    display: "flex",
-                    justifyContent: "start",
-                    gap: "10px",
-                    marginTop: "10px",
-                  }}
-                >
-                  {imageUrls.slice(4, 8).map((url, index) => (
-                    <img
-                      key={index}
-                      src={url}
-                      alt={` ${index}`}
-                      style={{
-                        width: "calc(25% - 10px)",
-                        height: "auto",
-                        objectFit: "cover",
-                      }}
-                    />
-                  ))}
-                </div>*/}
+               
               </div>
 
               <div className='button-container' style={{ display: "flex", justifyContent: "space-between" }}>

@@ -33,6 +33,8 @@ function SideNavbar({ children }) {
       icon: <MdContentPasteSearch style={{ fontSize: "25px" }} />,
       submenu: [
         { path: "/inspection/inspection_report", name: "Inspection Report" },
+        { path: "inspection/daily_inspection_report", name: "Daily Inspection" },
+        { path: "inspection/inspection_transfer", name: "Inspection Transfer" },
         // { path: "/inspection/rca", name: "RCA" },
       ],
     },
