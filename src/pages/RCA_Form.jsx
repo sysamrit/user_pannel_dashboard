@@ -273,6 +273,7 @@ function RCA_Form({ data, toggleContainer,inspectionNo }) {
               <input type="text" id="problem_statement" onChange={(e)=>setProblem_statement(e.target.value)} value={problem_statement} autoComplete="off" />
               
             </div>
+  
             {/* Calender Section */}
            <div className="date_container">
                 <div className="calender_content">
