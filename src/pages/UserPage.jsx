@@ -10,6 +10,8 @@ function UserPage() {
     const [isOtherTableVisible, setIsOtherTableVisible] = useState(false);
     const [isAutomobileVisible, setIsAutomobileVisible] = useState(false);
     const [scheduleTableVisible, setScheduleTableVisible] = useState(false);
+
+    const [assignWorkTableVisible, setAssignWorkTableVisible] = useState(false);
     const [inputValue, setInputValue] = useState("");
     const [primaryInsTableData, setPrimaryInsTableData] = useState([]);
     const [secondaryInsTableData, setSecondaryInsTableData] = useState([]);
@@ -70,8 +72,6 @@ function UserPage() {
         navigate(`/inspection/form/${id}/${asset_id}/${asset_name}/${emp_id}/${emp_name}/${dept}`);
     };
 
-    const currentDate=new Date();
-    // console.log(currentDate);
 
     return (
         <>
@@ -206,9 +206,9 @@ function UserPage() {
                             </tbody>
                         </table>
                     </div>
-                )}
+                    )}
 
-          {isAutomobileVisible && (
+                {isAutomobileVisible && (
                     <div className="scondary_table">
                         <div className="title_table"><p>Daily Automobile Inspection :</p></div>
                         <table>
@@ -247,7 +247,7 @@ function UserPage() {
                         <td colSpan="4" className="no-data">Haven't any Inspection Today</td>
                     </tr>
                 )}
-            </tbody>
+                 </tbody>
                         </table>
                     </div>
                 )}
@@ -286,6 +286,8 @@ function UserPage() {
                         </table>
                     </div>
                 )}
+                
+
             </div>
         </>
     );
